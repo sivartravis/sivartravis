@@ -1,31 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Google Visualization API Sample</title>
-  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    google.load('visualization', '1', {packages: ['corechart']});
-    function drawVisualization() {
-      var queryText = encodeURIComponent("SELECT latitude, longitude, business_name FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A#rows:id=1");
-      google.visualization.drawChart({
-        "containerId": "",
-        "dataSourceUrl": 'https://www.google.com/fusiontables/embedviz?viz=GVIZ&t=TABLE&q=select+col0%2C+col1%2C+col2%2C+col3%2C+col4%2C+col5%2C+col6%2C+col7%2C+col8%2C+col9%2C+col10%2C+col11%2C+col12%2C+col13%2C+col14%2C+col15%2C+col16%2C+col17%2C+col18%2C+col19%2C+col20%2C+col21%2C+col22%2C+col23%2C+col24%2C+col25%2C+col26%2C+col27%2C+col28%2C+col29%2C+col30%2C+col31%2C+col32%2C+col33%2C+col34%2C+col35%2C+col36%2C+col37%2C+col38%2C+col39%2C+col40%2C+col41%2C+col42%2C+col43%2C+col44%2C+col45%2C+col46%2C+col47%2C+col48%2C+col49+from+1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A&containerId=googft-gviz-canvas;
-        "query":"SELECT latitude, longitude, business_name FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A#rows:id=1",
-        "refreshInterval": 5,
-        "chartType": "BarChart",
-        "options": {
-          "title":"Yearly Coffee Consumption by Country",
-          "vAxis": {"latitude": "longitude"},
-          "hAxis": {"title": "business_name"}
-        }
-      });
-    }
+<html>
+  <head>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1');
+      google.setOnLoadCallback(drawVisualization);
 
-    google.setOnLoadCallback(drawVisualization);
-  </script>
-</head>
-<body style="font-family: Arial;border: 0 none;">
-  <div id="visualization_div" style="width: 600px; height: 400px;"></div>
-</body>
-</html>
+      function drawVisualization() {
+        var wrapper = new google.visualization.ChartWrapper({
+          chartType: 'BarChart',
+          dataSourceUrl: 'https://www.google.com/fusiontables/DataSource?dsrcid=641716',
+          "query":"SELECT Year, Austria, Bulgaria, Denmark, Greece FROM 641716",
+          options: {'title': 'Countries'},
+          containerId: 'vis_div'
+        });
+        wrapper.draw()
+
+        // No query callback handler needed!
+      }
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="vis_div" style="width: 600px; height: 400px;"></div>
+  </body>
