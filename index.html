@@ -1,24 +1,31 @@
-<html>
-  <head>
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load('visualization', '1');
-      google.setOnLoadCallback(drawVisualization);
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Google Visualization API Sample</title>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1', {packages: ['corechart']});
+    function drawVisualization() {
+      var queryText = encodeURIComponent("SELECT interviewers, biz-type FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A");
+      google.visualization.drawChart({
+        "containerId": "visualization_div",
+        "dataSourceUrl": 'https://www.google.com/fusiontables/gvizdata?tq=',
+        "query":"SELECT biz-type, interviewers FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A",
+        "refreshInterval": 5,
+        "chartType": "PieChart",
+        "options": {
+          "title":"Yearly Coffee Consumption by Country",
+          "vAxis": {"title": "Year"},
+          "hAxis": {"title": "Cups"}
+        }
+      });
+    }
 
-      function drawVisualization() {
-        var wrapper = new google.visualization.ChartWrapper({
-          chartType: 'BarChart',
-          dataSourceUrl: 'https://www.google.com/fusiontables/DataSource?dsrcid=641716',
-          "query":"SELECT Year, Austria, Bulgaria, Denmark, Greece FROM 641716",
-          options: {'title': 'Countries'},
-          containerId: 'vis_div'
-        });
-        wrapper.draw()
-
-        // No query callback handler needed!
-      }
-    </script>
-  </head>
-  <body style="font-family: Arial;border: 0 none;">
-    <div id="vis_div" style="width: 600px; height: 400px;"></div>
-  </body>
+    google.setOnLoadCallback(drawVisualization);
+  </script>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+  <div id="visualization_div" style="width: 600px; height: 400px;"></div>
+</body>
+</html>
