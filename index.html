@@ -11,13 +11,13 @@
       google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'https://www.google.com/fusiontables/gvizdata?tq=',
-        "query":"SELECT Year,  latitude, longitude, business_name FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A",
+        "query":"SELECT latitude, longitude, business_name FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A",
         "refreshInterval": 5,
         "chartType": "BarChart",
         "options": {
           "title":"Yearly Coffee Consumption by Country",
-          "vAxis": {"title": "Year"},
-          "hAxis": {"title": "Cups"}
+          "vAxis": {"latitude": "longitude"},
+          "hAxis": {"title": "business_name"}
         }
       });
     }
