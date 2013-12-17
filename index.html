@@ -2,30 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Google Visualization API Sample</title>
-  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    google.load('visualization', '1', {packages: ['corechart']});
-    function drawVisualization() {
-      var queryText = encodeURIComponent("SELECT interviewers, biz-type FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A");
-      google.visualization.drawChart({
-        "containerId": "visualization_div",
-        "dataSourceUrl": 'https://www.google.com/fusiontables/gvizdata?tq=',
-        "query":"SELECT biz-type, interviewers FROM 1KsGeZKVoGBMzzsfVEUw_YL6b6PcY3FMFd1a2h7A",
-        "refreshInterval": 5,
-        "chartType": "PieChart",
-        "options": {
-          "title":"Yearly Coffee Consumption by Country",
-          "vAxis": {"title": "Year"},
-          "hAxis": {"title": "Cups"}
-        }
-      });
-    }
 
-    google.setOnLoadCallback(drawVisualization);
-  </script>
-</head>
+
+
+
+
+
 <body style="font-family: Arial;border: 0 none;">
-  <div id="visualization_div" style="width: 600px; height: 400px;"></div>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AkoNCp6jYef6dDk2N3RsMkVTOW9hZFhSR2xWQzc3R2c&transpose=0&headers=0&range=C3%3AD12&gid=4&pub=1","options":{"titleTextStyle":{"bold":true,"color":"#000","fontSize":16},"animation":{"duration":0},"colors":["#073763","#DC3912","#FF9900","#109618","#990099","#0099C6","#DD4477","#66AA00","#B82E2E","#a64d79","#994499","#22AA99","#AAAA11","#6633CC","#E67300","#8B0707","#651067","#329262","#5574A6","#3B3EAC","#B77322","#16D620","#B91383","#F4359E","#9C5935","#A9C413","#2A778D","#668D1C","#BEA413","#0C5922","#743411"],"width":1920,"is3D":false,"pieSliceText":"value","hAxis":{"title":"Horizontal axis title","useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},"vAxes":[{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null}],"pieHole":0.5,"title":"Countries with the Most Think Tanks","booleanRole":"certainty","pieSliceBorderColor":"#434343","height":807,"legend":"left","focusTarget":"series","tooltip":{}},"state":{},"view":{},"isDefaultVisualization":false,"chartType":"PieChart","chartName":"Chart 2"} </script>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AkoNCp6jYef6dDk2N3RsMkVTOW9hZFhSR2xWQzc3R2c&transpose=0&headers=1&range=B4%3AD11&gid=3&pub=1","options":{"titleTextStyle":{"bold":true,"color":"#434343","fontSize":"18"},"fontName":"Sans Serif","animation":{"duration":500},"backgroundColor":{"fill":"#f3f3f3"},"colors":["#990000","#DC3912","#FF9900","#109618","#990099","#0099C6","#DD4477","#66AA00","#B82E2E","#316395","#994499","#22AA99","#AAAA11","#6633CC","#E67300","#8B0707","#651067","#329262","#5574A6","#3B3EAC","#B77322","#16D620","#B91383","#F4359E","#9C5935","#A9C413","#2A778D","#668D1C","#BEA413","#0C5922","#743411"],"width":1920,"hAxis":{"title":"","useFormatFromData":false,"minorGridlines":{"count":"0"},"formatOptions":{"source":"none","scaleFactor":null},"minValue":0,"viewWindowMode":"explicit","gridlines":{"count":"4","color":"#efefef"},"viewWindow":{"min":0,"max":2200},"maxValue":2200},"vAxes":[{"titleTextStyle":{"bold":true,"color":"#222","italic":false,"fontSize":"14"},"title":"Percentage of Total ","useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null}],"bubble":{"stroke":"#cfe2f3","opacity":"1"},"booleanRole":"certainty","title":"Number of Think Tanks in the World in 2013","height":807,"legend":"in","tooltip":{}},"state":{},"view":{},"isDefaultVisualization":false,"chartType":"BubbleChart","chartName":"Chart 4"} </script>
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AkoNCp6jYef6dDk2N3RsMkVTOW9hZFhSR2xWQzc3R2c&transpose=0&headers=1&range=B4%3AD11&gid=3&pub=1","options":{"titleTextStyle":{"bold":true,"color":"#000","fontSize":"18"},"series":{"0":{"errorBars":{"errorType":"none"},"color":"#0b5394","areaOpacity":"0.5"}},"animation":{"duration":500},"backgroundColor":{"fill":"#f3f3f3"},"width":1920,"hAxis":{"titleTextStyle":{"color":"#222","italic":false,"fontSize":12},"useFormatFromData":true,"title":"","minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},"chartArea":{"height":"","width":"","left":"","top":""},"vAxes":[{"title":"Number of Think Tanks","useFormatFromData":true,"minValue":null,"textStyle":{"bold":true,"color":"#222","italic":false,"fontSize":12},"viewWindow":{"min":null,"max":null},"logScale":false,"maxValue":null},{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"logScale":false,"maxValue":null}],"booleanRole":"certainty","title":" Number of Think Tanks in the World in 2013","height":807,"domainAxis":{"direction":1},"legend":"right","focusTarget":"category","tooltip":{},"isStacked":true},"state":{},"view":{},"isDefaultVisualization":false,"chartType":"SteppedAreaChart","chartName":"Chart 5"} </script>
+
+  
+  
 </body>
 </html>
